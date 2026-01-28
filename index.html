@@ -532,16 +532,15 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            height: 600px;
         }
         
         .work-item {
             border-radius: 16px;
             overflow: hidden;
             position: relative;
+            height: 320px;
         }
         
         .work-item img {
@@ -552,8 +551,6 @@
         }
         
         .work-item:hover img { transform: scale(1.03); }
-        
-        .work-item:first-child { grid-row: span 2; }
         
         .work-label {
             position: absolute;
@@ -1153,9 +1150,8 @@
             .service-card { flex: 0 0 300px; }
             
             .work { padding: 80px 24px; }
-            .work-grid { grid-template-columns: 1fr; height: auto; }
+            .work-grid { grid-template-columns: 1fr; }
             .work-item { height: 250px; }
-            .work-item:first-child { grid-row: span 1; }
             
             .tips { padding: 80px 24px; }
             .tips-header { flex-direction: column; align-items: flex-start; }
@@ -1333,6 +1329,10 @@
             <div class="work-item">
                 <img src="work-2.jpg" alt="New catchment tank installation Puna Hawaii">
                 <span class="work-label">New Installation</span>
+            </div>
+            <div class="work-item">
+                <img src="roof-wash.jpg" alt="Roof pressure washing for catchment systems Hawaii">
+                <span class="work-label">Roof Washing</span>
             </div>
             <div class="work-item">
                 <img src="work-3.jpg" alt="Catchment tank cleaning and liner service HPP">
