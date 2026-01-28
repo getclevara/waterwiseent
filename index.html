@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterWise Enterprise | Puna Catchment</title>
+    <meta name="description" content="Catchment installation, cleaning & repairs across Puna. Local service for local folks. 808-765-7234">
+    
+    <meta property="og:title" content="WaterWise | Puna Catchment Experts">
+    <meta name="geo.region" content="US-HI">
+    <meta name="geo.placename" content="Hawaiian Paradise Park">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"LocalBusiness","name":"WaterWise Enterprise","telephone":"+1-808-765-7234","address":{"@type":"PostalAddress","addressLocality":"Hawaiian Paradise Park","addressRegion":"HI"},"areaServed":["HPP","Pahoa","Puna","Keaau","Hilo"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"12"}}
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --green: #1a3a2f;
+            --green-light: #2d5a47;
+            --gold: #d4a853;
+            --cream: #f5f1e8;
+            --water: #4a9b9b;
+            --water-light: #6bbfbf;
+            --ink: #1a1a1a;
+            --white: #fffef9;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--green);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        ::selection { background: var(--gold); color: var(--green); }
+        
+        .serif { font-family: 'Instrument Serif', serif; }
+        
+        /* Organic blob shapes */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo img { height: 36px; filter: brightness(10); }
+        
+        .logo span {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .nav-right a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        /* Hero - Full immersive */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--green) 0%, transparent 60%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+        }
+        
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+        
+        .hero-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+        
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: 400;
+            line-height: 0.95;
+            margin-bottom: 32px;
+        }
+        
+        .hero h1 i {
+            color: var(--water-light);
+        }
+        
+        .hero-sub {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 36px;
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--green);
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(212, 168, 83, 0.3);
+        }
+        
+        .hero-phone {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero-phone:hover { color: var(--gold); }
+        
+        /* Marquee */
+        .marquee-wrap {
+            background: var(--gold);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+        
+        .marquee {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .marquee span {
+            flex-shrink: 0;
+            padding: 0 48px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        
+        /* About - Flowing section */
+        .about {
+            background: var(--cream);
+            color: var(--ink);
+            padding: 140px 40px;
+            position: relative;
+        }
+        
+        .about-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+        
+        .about-text h2 i { color: var(--water); }
+        
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .about-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-num {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3.5rem;
+            color: var(--green);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 4px;
+        }
+        
+        .about-img {
+            position: relative;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 300px 300px 20px 20px;
+            height: 600px;
+            object-fit: cover;
+        }
+        
+        .about-badge {
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            background: var(--green);
+            color: var(--white);
+            padding: 24px 32px;
+            border-radius: 20px;
+        }
+        
+        .about-badge p {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.3rem;
+        }
+        
+        .about-badge span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        /* Services - Horizontal cards */
+        .services {
+            background: var(--green);
+            padding: 120px 40px;
+            overflow: hidden;
+        }
+        
+        .services-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .scroll-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: 0.9rem;
+            animation: nudge 2s ease-in-out infinite;
+        }
+        
+        @keyframes nudge {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+        }
+        
+        .services-container {
+            position: relative;
+        }
+        
+        .services-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 40px;
+            width: 120px;
+            background: linear-gradient(to right, transparent, var(--green));
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .services h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+        }
+        
+        .services-scroll {
+            display: flex;
+            gap: 24px;
+            padding: 0 40px 40px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .services-scroll::-webkit-scrollbar { display: none; }
+        
+        .service-card {
+            flex: 0 0 380px;
+            background: var(--green-light);
+            border-radius: 24px;
+            padding: 40px;
+            scroll-snap-align: start;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .service-num {
+            font-family: 'Instrument Serif', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.5;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        
+        .service-card p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        /* Work Gallery - Stacked & overlapping */
+        .work {
+            background: var(--cream);
+            padding: 120px 40px;
+            position: relative;
+        }
+        
+        .work-header {
+            max-width: 1400px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+        
+        .work h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            color: var(--ink);
+        }
+        
+        .work-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 24px;
+            height: 700px;
+        }
+        
+        .work-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .work-item:hover img { transform: scale(1.05); }
+        
+        .work-item:first-child { grid-row: span 2; }
+        
+        .work-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: var(--white);
+            color: var(--ink);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Reviews - Big quotes */
+        .reviews {
+            background: var(--water);
+            padding: 120px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reviews::before {
+            content: '"';
+            position: absolute;
+            top: -100px;
+            right: 5%;
+            font-family: 'Instrument Serif', serif;
+            font-size: 60rem;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+            pointer-events: none;
+        }
+        
+        .reviews-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .reviews h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 60px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .review-slider {
+            position: relative;
+        }
+        
+        .review-slide {
+            text-align: center;
+            display: none;
+        }
+        
+        .review-slide.active { display: block; }
+        
+        .review-quote {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 40px;
+        }
+        
+        .review-author {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .review-author strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        
+        .review-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 48px;
+        }
+        
+        .review-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .review-dot.active {
+            background: var(--white);
+            transform: scale(1.2);
+        }
+        
+        /* Areas */
+        .areas {
+            background: var(--green);
+            padding: 120px 40px;
+        }
+        
+        .areas-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .areas h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 48px;
+        }
+        
+        .areas-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .area-tag {
+            padding: 16px 32px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        
+        .area-tag:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--green);
+        }
+        
+        .area-tag.home {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--green);
+        }
+        
+        /* CTA */
+        .cta {
+            background: var(--cream);
+            padding: 140px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            color: var(--green);
+            margin-bottom: 24px;
+        }
+        
+        .cta h2 i { color: var(--water); }
+        
+        .cta-phone {
+            display: inline-block;
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--ink);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.3s;
+        }
+        
+        .cta-phone:hover { color: var(--water); }
+        
+        .cta .btn {
+            background: var(--green);
+            color: var(--white);
+        }
+        
+        .cta .btn:hover {
+            background: var(--water);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--green);
+            padding: 80px 40px 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            margin-top: 16px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        footer h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover { color: var(--white); }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        
+        /* Chat - Talk Story style */
+        .chat-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+        }
+        
+        .chat-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 28px;
+            background: var(--gold);
+            color: var(--green);
+            border: none;
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .chat-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+        
+        .chat-btn svg { width: 22px; height: 22px; }
+        
+        .chat-panel {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 400px;
+            height: 560px;
+            background: var(--white);
+            border-radius: 32px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .chat-float.open .chat-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        
+        .chat-head {
+            background: var(--green);
+            padding: 28px;
+            position: relative;
+        }
+        
+        .chat-head h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--white);
+        }
+        
+        .chat-head p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+        
+        .chat-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+        }
+        
+        .chat-close:hover { color: var(--white); }
+        
+        .chat-body {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #f9f7f3;
+        }
+        
+        .chat-msg {
+            max-width: 85%;
+            padding: 16px 20px;
+            border-radius: 24px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            animation: popIn 0.3s ease;
+        }
+        
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .chat-msg.them {
+            background: var(--white);
+            color: var(--ink);
+            align-self: flex-start;
+            border-bottom-left-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .chat-msg.you {
+            background: var(--green);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 8px;
+        }
+        
+        .chat-msg.typing {
+            display: flex;
+            gap: 6px;
+            padding: 20px 24px;
+        }
+        
+        .chat-msg.typing span {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            animation: bounce 1.2s infinite;
+        }
+        
+        .chat-msg.typing span:nth-child(2) { animation-delay: 0.15s; }
+        .chat-msg.typing span:nth-child(3) { animation-delay: 0.3s; }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .quick-opts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .quick-opt {
+            padding: 10px 18px;
+            background: var(--cream);
+            border: none;
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quick-opt:hover {
+            background: var(--gold);
+            color: var(--green);
+        }
+        
+        .chat-foot {
+            padding: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            gap: 12px;
+            background: var(--white);
+        }
+        
+        .chat-foot input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .chat-foot input:focus { border-color: var(--green); }
+        
+        .chat-foot button {
+            width: 52px;
+            height: 52px;
+            background: var(--green);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        
+        .chat-foot button:hover { background: var(--water); }
+        .chat-foot button svg { width: 22px; height: 22px; color: var(--white); }
+        
+        /* Mobile */
+        @media (max-width: 1024px) {
+            nav { padding: 20px 24px; }
+            .hero { padding: 0 24px 60px; }
+            .hero h1 { font-size: 3rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+            
+            .about, .services, .work, .reviews, .areas, .cta { padding: 80px 24px; }
+            .about-inner { grid-template-columns: 1fr; gap: 60px; }
+            .about-img img { height: 400px; border-radius: 20px; }
+            .about-badge { position: static; margin-top: 24px; display: inline-block; }
+            
+            .services-header { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+            .services-scroll { padding: 0 24px 24px; }
+            .services-container::after { width: 60px; }
+            .service-card { flex: 0 0 300px; }
+            
+            .work-grid { grid-template-columns: 1fr; height: auto; }
+            .work-item { height: 300px; }
+            .work-item:first-child { grid-row: span 1; }
+            
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            
+            .chat-panel { width: calc(100vw - 48px); right: -8px; }
+        }
+        
+        @media (max-width: 600px) {
+            .nav-right a:first-child { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .about-stats { flex-direction: column; gap: 24px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+            .chat-btn span { display: none; }
+            .chat-btn { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="WaterWise">
+            <span>WaterWise</span>
+        </a>
+        <div class="nav-right">
+            <a href="tel:808-765-7234">808-765-7234</a>
+            <a href="#contact" class="btn btn-gold">Get Quote</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="hero.jpg" alt="Puna rainforest">
+        </div>
+        <div class="hero-content">
+            <p class="hero-label">Puna, Hawaii</p>
+            <h1>Clean <i>water</i> for your home.</h1>
+            <p class="hero-sub">We build, fix, and maintain catchment systems across the Big Island. Real local service from people who understand off-grid life.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+                <a href="tel:808-765-7234" class="hero-phone">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    808-765-7234
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-wrap">
+        <div class="marquee">
+            <span>★ 5.0 Google Rating</span>
+            <span>HPP • Pahoa • Keaau • Volcano • Hilo</span>
+            <span>Tank Installs</span>
+            <span>Monthly Maintenance</span>
+            <span>Emergency Repairs</span>
+            <span>★ 5.0 Google Rating</span>
+            <span>HPP • Pahoa • Keaau • Volcano • Hilo</span>
+            <span>Tank Installs</span>
+            <span>Monthly Maintenance</span>
+            <span>Emergency Repairs</span>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <div class="about-text">
+                <h2>Over 30,000 homes on the Big Island run on <i>catchment.</i></h2>
+                <p>Living off-grid in Puna means your water comes straight from the sky. That's beautiful—but it also means your family's health depends on a system that actually works.</p>
+                <p>We handle everything: new tank builds, deep cleaning, pump repairs, filter swaps, roof washing. Whatever it takes to keep your water clean and flowing.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-num">500+</div>
+                        <div class="stat-label">Tanks Serviced</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">5.0</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="about.jpg" alt="Catchment tank in Hawaii">
+                <div class="about-badge">
+                    <p>Based in HPP</p>
+                    <span>Serving all of East Hawaii</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>What we do</h2>
+            <div class="scroll-hint">
+                <span>Scroll to explore</span>
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+        </div>
+        <div class="services-container">
+            <div class="services-scroll" id="servicesScroll">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3>Tank Installation</h3>
+                <p>Full builds from foundation to filtration. We design systems that match your property and water needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3>Monthly Maintenance</h3>
+                <p>Regular care keeps problems small. Filter changes, sanitizing, and a Water Report Card every visit.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3>Deep Cleaning</h3>
+                <p>Sediment removal, sidewall scrubbing, full sanitization. Your tank, totally refreshed.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">04</div>
+                <h3>Repairs</h3>
+                <p>Pumps, pipes, liners—when something breaks, we fix it. Emergency service available.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">05</div>
+                <h3>System Upgrades</h3>
+                <p>Floating intakes, first-flush diverters, UV systems. Modern solutions for cleaner water.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-num">06</div>
+                <h3>Roof Washing</h3>
+                <p>Clean roof = cleaner water. We remove years of buildup safely.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="work-header">
+            <h2>Recent projects</h2>
+        </div>
+        <div class="work-grid">
+            <div class="work-item">
+                <img src="work-1.jpg" alt="Before and after roof">
+                <span class="work-tag">Before & After</span>
+            </div>
+            <div class="work-item">
+                <img src="work-2.jpg" alt="Tank installation">
+                <span class="work-tag">New Build</span>
+            </div>
+            <div class="work-item">
+                <img src="work-3.jpg" alt="Tank cleaning">
+                <span class="work-tag">Deep Clean</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="reviews-inner">
+            <h2>What folks are saying</h2>
+            
+            <div class="review-slider">
+                <div class="review-slide active">
+                    <p class="review-quote">"I had stuck water filter canisters I couldn't budge. A quick call and they fixed it within the hour. Best, fast great service ever!"</p>
+                    <div class="review-author">
+                        <strong>Marilyn McFarland</strong>
+                        ★★★★★ Verified Review
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <p class="review-quote">"WaterWise has taken care of our catchment for 3 years. They're the only ones I would trust with our water system."</p>
+                    <div class="review-author">
+                        <strong>Mano</strong>
+                        ★★★★★ Verified Review
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <p class="review-quote">"We had what we thought was a faulty pump. WaterWise went above and beyond to find and install one for us in a pinch."</p>
+                    <div class="review-author">
+                        <strong>PatRick</strong>
+                        ★★★★★ Local Guide
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <p class="review-quote">"Dependable and efficient. With WaterWise monitoring my catchment water quality, I'm confident it's safe."</p>
+                    <div class="review-author">
+                        <strong>Karen</strong>
+                        ★★★★★ Verified Review
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <p class="review-quote">"They squeezed us into the schedule the day after I called. A pleasure to work with."</p>
+                    <div class="review-author">
+                        <strong>Jesse Cardin</strong>
+                        ★★★★★ Local Guide
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-dots">
+                <button class="review-dot active" onclick="showReview(0)"></button>
+                <button class="review-dot" onclick="showReview(1)"></button>
+                <button class="review-dot" onclick="showReview(2)"></button>
+                <button class="review-dot" onclick="showReview(3)"></button>
+                <button class="review-dot" onclick="showReview(4)"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="areas" id="areas">
+        <div class="areas-inner">
+            <h2>Where we work</h2>
+            <div class="areas-tags">
+                <span class="area-tag home">Hawaiian Paradise Park</span>
+                <span class="area-tag">Pahoa</span>
+                <span class="area-tag">Keaau</span>
+                <span class="area-tag">Mountain View</span>
+                <span class="area-tag">Volcano</span>
+                <span class="area-tag">Orchidland</span>
+                <span class="area-tag">Hawaiian Acres</span>
+                <span class="area-tag">Hilo</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2>Let's <i>talk.</i></h2>
+        <a href="tel:808-765-7234" class="cta-phone">808-765-7234</a>
+        <br>
+        <a href="mailto:waterwise.ent@gmail.com" class="btn">Email Us</a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="WaterWise" style="filter: brightness(10);">
+                    <span>WaterWise</span>
+                </a>
+                <p>Local catchment experts based in Hawaiian Paradise Park. Serving Puna, Hilo, and East Hawaii.</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="#services">Installation</a>
+                <a href="#services">Maintenance</a>
+                <a href="#services">Cleaning</a>
+                <a href="#services">Repairs</a>
+            </div>
+            <div>
+                <h4>Areas</h4>
+                <a href="#areas">HPP</a>
+                <a href="#areas">Pahoa</a>
+                <a href="#areas">Keaau</a>
+                <a href="#areas">Hilo</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <a href="tel:808-765-7234">808-765-7234</a>
+                <a href="mailto:waterwise.ent@gmail.com">waterwise.ent@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 WaterWise Enterprise
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-float" id="chatBox">
+        <button class="chat-btn" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <span>Talk Story</span>
+        </button>
+        
+        <div class="chat-panel">
+            <div class="chat-head">
+                <h3>Talk Story</h3>
+                <p>Ask us anything about catchment</p>
+                <button class="chat-close" onclick="toggleChat()">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg them">
+                    Aloha! 🤙 What can we help you with?
+                    <div class="quick-opts">
+                        <button class="quick-opt" onclick="quickSend('Need a quote')">Need a quote</button>
+                        <button class="quick-opt" onclick="quickSend('Tank cleaning')">Tank cleaning</button>
+                        <button class="quick-opt" onclick="quickSend('Emergency')">Emergency</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-foot">
+                <input type="text" id="msgInput" placeholder="Type here..." onkeypress="if(event.key==='Enter')sendMsg()">
+                <button onclick="sendMsg()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Review slider
+        let currentReview = 0;
+        const reviews = document.querySelectorAll('.review-slide');
+        const dots = document.querySelectorAll('.review-dot');
+        
+        function showReview(n) {
+            reviews.forEach(r => r.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            reviews[n].classList.add('active');
+            dots[n].classList.add('active');
+            currentReview = n;
+        }
+        
+        setInterval(() => {
+            showReview((currentReview + 1) % reviews.length);
+        }, 5000);
+        
+        // Chat
+        function toggleChat() {
+            document.getElementById('chatBox').classList.toggle('open');
+        }
+        
+        function quickSend(txt) {
+            document.getElementById('msgInput').value = txt;
+            sendMsg();
+        }
+        
+        function sendMsg() {
+            const input = document.getElementById('msgInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+            
+            addMsg(msg, 'you');
+            input.value = '';
+            
+            // Typing indicator
+            const typing = document.createElement('div');
+            typing.className = 'chat-msg them typing';
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            document.getElementById('chatBody').appendChild(typing);
+            scrollChat();
+            
+            setTimeout(() => {
+                typing.remove();
+                addMsg(getReply(msg.toLowerCase()), 'them');
+            }, 1000 + Math.random() * 500);
+        }
+        
+        function addMsg(txt, who) {
+            const div = document.createElement('div');
+            div.className = `chat-msg ${who}`;
+            div.innerHTML = txt;
+            document.getElementById('chatBody').appendChild(div);
+            scrollChat();
+        }
+        
+        function scrollChat() {
+            const body = document.getElementById('chatBody');
+            body.scrollTop = body.scrollHeight;
+        }
+        
+        function getReply(msg) {
+            if (msg.includes('quote') || msg.includes('price') || msg.includes('cost') || msg.includes('how much')) {
+                return `Every property is different, so we like to come take a look before giving you a number. No charge for estimates!<br><br>Give us a call at <strong>808-765-7234</strong> or shoot us an email and we'll set something up. 🤙`;
+            }
+            if (msg.includes('clean')) {
+                return `We do full deep cleans—scrub the walls, vacuum the sediment, sanitize everything. Most tanks need it every 2-3 years.<br><br>Call <strong>808-765-7234</strong> to schedule!`;
+            }
+            if (msg.includes('emergency') || msg.includes('no water') || msg.includes('urgent')) {
+                return `No water is no fun! 😬 Call us right now at <strong>808-765-7234</strong>—we'll do our best to get to you today or tomorrow.`;
+            }
+            if (msg.includes('install') || msg.includes('new tank') || msg.includes('build')) {
+                return `Nice! We handle the whole thing—site prep, tank, plumbing, filtration. Most installs run $7K-$20K depending on size.<br><br>Call <strong>808-765-7234</strong> for a free on-site estimate.`;
+            }
+            if (msg.includes('maintenance') || msg.includes('monthly')) {
+                return `Our monthly plans are popular—we come out regularly, swap filters, sanitize, and give you a report card. Peace of mind, basically.<br><br>Hit us up at <strong>808-765-7234</strong> to learn more!`;
+            }
+            if (msg.includes('area') || msg.includes('where') || msg.includes('location') || msg.includes('hilo') || msg.includes('pahoa') || msg.includes('hpp')) {
+                return `We're based in HPP and cover all of East Hawaii—Pahoa, Keaau, Mountain View, Volcano, Orchidland, Hawaiian Acres, and the Hilo side. 🌴`;
+            }
+            if (msg.includes('safe') || msg.includes('drink')) {
+                return `With the right setup—sediment filter, carbon filter, UV—your catchment water is totally safe to drink. We install systems that make your water potable.`;
+            }
+            if (msg.includes('hi') || msg.includes('hello') || msg.includes('hey') || msg.includes('aloha')) {
+                return `Hey! 👋 What can we help you with? Looking for a quote, have questions, or something else?`;
+            }
+            if (msg.includes('thank')) {
+                return `You got it! Anything else? Otherwise, feel free to call anytime—<strong>808-765-7234</strong>. Mahalo! 🤙`;
+            }
+            return `Good question! Best thing is to give us a call at <strong>808-765-7234</strong> or email waterwise.ent@gmail.com. We're happy to help!<br><br>Anything else I can try to answer?`;
+        }
+    </script>
+
+</body>
+</html>
