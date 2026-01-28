@@ -532,7 +532,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
         
@@ -540,13 +540,12 @@
             border-radius: 16px;
             overflow: hidden;
             position: relative;
-            height: 320px;
         }
         
         .work-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
             transition: transform 0.5s ease;
         }
         
@@ -1150,8 +1149,7 @@
             .service-card { flex: 0 0 300px; }
             
             .work { padding: 80px 24px; }
-            .work-grid { grid-template-columns: 1fr; }
-            .work-item { height: 250px; }
+            .work-grid { grid-template-columns: 1fr 1fr; }
             
             .tips { padding: 80px 24px; }
             .tips-header { flex-direction: column; align-items: flex-start; }
@@ -1173,6 +1171,7 @@
             .hero-btns { flex-direction: column; width: 100%; }
             .hero-btns .btn { width: 100%; justify-content: center; }
             .about-stats { flex-direction: column; gap: 20px; }
+            .work-grid { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr; }
             .chat-btn span { display: none; }
             .chat-btn { padding: 16px; }
@@ -1323,20 +1322,20 @@
         </div>
         <div class="work-grid">
             <div class="work-item">
-                <img src="work-1.jpg" alt="Before and after roof cleaning Big Island Hawaii">
-                <span class="work-label">Before & After</span>
+                <img src="work-1.jpg" alt="Pool and tank cleaning before and after Big Island Hawaii">
+                <span class="work-label">Tank Cleaning</span>
             </div>
             <div class="work-item">
                 <img src="work-2.jpg" alt="New catchment tank installation Puna Hawaii">
                 <span class="work-label">New Installation</span>
             </div>
             <div class="work-item">
-                <img src="roof-wash.jpg" alt="Roof pressure washing for catchment systems Hawaii">
-                <span class="work-label">Roof Washing</span>
+                <img src="work-3.jpg" alt="Roof restoration before and after for catchment Hawaii">
+                <span class="work-label">Roof Restoration</span>
             </div>
             <div class="work-item">
-                <img src="work-3.jpg" alt="Catchment tank cleaning and liner service HPP">
-                <span class="work-label">Deep Clean</span>
+                <img src="roof-wash.jpg" alt="Roof pressure washing for catchment systems Hawaii">
+                <span class="work-label">Roof Washing</span>
             </div>
         </div>
     </section>
