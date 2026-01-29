@@ -838,37 +838,254 @@
             line-height: 1.7;
         }
         
-        /* CTA */
-        .cta {
-            background: var(--forest);
+        /* Quiz Section */
+        .quiz {
+            background: var(--ocean);
             padding: 120px 48px;
             text-align: center;
         }
         
-        .cta h2 {
+        .quiz h2 {
             font-family: 'Instrument Serif', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .quiz-sub {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 48px;
+        }
+        
+        .quiz-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: left;
+        }
+        
+        .quiz-progress {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .progress-bar {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+        }
+        
+        .progress-bar::before,
+        .progress-bar::after {
+            content: '';
+            flex: 1;
+            height: 4px;
+            background: #e5e5e5;
+            border-radius: 2px;
+        }
+        
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: #e5e5e5;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        
+        .progress-step.active {
+            background: var(--ocean);
+        }
+        
+        .quiz-question h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: var(--ink);
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .quiz-opt {
+            width: 100%;
+            padding: 18px 24px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-opt:hover {
+            border-color: var(--ocean);
+            background: rgba(45, 125, 125, 0.05);
+        }
+        
+        .quiz-opt.selected {
+            border-color: var(--ocean);
+            background: rgba(45, 125, 125, 0.1);
+            color: var(--ocean);
+        }
+        
+        .quiz-next {
+            margin-top: 32px;
+            padding: 16px 32px;
+            background: #ccc;
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: not-allowed;
+            float: right;
+            transition: all 0.3s;
+        }
+        
+        .quiz-next.enabled {
+            background: var(--forest);
+            cursor: pointer;
+        }
+        
+        .quiz-next.enabled:hover {
+            background: var(--ocean);
+        }
+        
+        .quiz-result {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+        
+        .quiz-result h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        
+        .quiz-result p {
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--forest);
+            padding: 120px 48px;
+        }
+        
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .contact-text h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 400;
             color: white;
             margin-bottom: 16px;
         }
         
-        .cta p {
+        .contact-text p {
             color: rgba(255,255,255,0.7);
-            margin-bottom: 32px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
         }
         
-        .cta-phone {
-            display: inline-block;
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             color: var(--gold);
             text-decoration: none;
-            margin-bottom: 24px;
+            font-size: 1.1rem;
             transition: color 0.3s;
         }
         
-        .cta-phone:hover { color: var(--gold-light); }
+        .contact-link:hover { color: var(--gold-light); }
+        .contact-link svg { color: var(--gold); }
+        
+        .contact-form-wrap {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+        }
+        
+        .contact-form-wrap h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 32px;
+            color: var(--ink);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .btn-full { width: 100%; justify-content: center; }
+        
+        /* CTA (simple fallback removed, using contact section) */
         
         /* Footer */
         footer {
@@ -1154,6 +1371,12 @@
             .tips { padding: 80px 24px; }
             .tips-header { flex-direction: column; align-items: flex-start; }
             .tips-grid { grid-template-columns: 1fr; }
+            
+            .quiz { padding: 80px 24px; }
+            .quiz-card { padding: 32px 24px; }
+            
+            .contact { padding: 80px 24px; }
+            .contact-inner { grid-template-columns: 1fr; gap: 48px; }
             
             .reviews { padding: 80px 24px; }
             .areas { padding: 80px 24px; }
@@ -1464,12 +1687,136 @@
         </div>
     </section>
 
-    <section class="cta" id="contact">
-        <h2>Ready to talk catchment?</h2>
-        <p>Free estimates, honest advice, no pressure</p>
-        <a href="tel:808-765-7234" class="cta-phone">808-765-7234</a>
-        <br>
-        <a href="mailto:waterwise.ent@gmail.com" class="btn btn-gold">Email Us</a>
+    <!-- Water Health Quiz -->
+    <section class="quiz" id="quiz">
+        <h2>How healthy is your water system?</h2>
+        <p class="quiz-sub">Answer 5 quick questions and get a personalized assessment — free.</p>
+        
+        <div class="quiz-card">
+            <div class="quiz-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="quiz-question" data-step="1">
+                <h3>When was your tank last cleaned?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-score="1">Less than 1 year ago</button>
+                    <button class="quiz-opt" data-score="2">1-2 years ago</button>
+                    <button class="quiz-opt" data-score="3">3-4 years ago</button>
+                    <button class="quiz-opt" data-score="4">5+ years ago or never</button>
+                    <button class="quiz-opt" data-score="3">I don't know</button>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-step="2" style="display:none;">
+                <h3>How old are your filters?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-score="1">Less than 3 months</button>
+                    <button class="quiz-opt" data-score="2">3-6 months</button>
+                    <button class="quiz-opt" data-score="3">6-12 months</button>
+                    <button class="quiz-opt" data-score="4">Over a year or I don't have filters</button>
+                    <button class="quiz-opt" data-score="3">I don't know</button>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-step="3" style="display:none;">
+                <h3>Have you noticed any issues with your water?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-score="1">No issues at all</button>
+                    <button class="quiz-opt" data-score="2">Occasional slight odor or taste</button>
+                    <button class="quiz-opt" data-score="3">Visible particles or discoloration</button>
+                    <button class="quiz-opt" data-score="4">Low pressure or pump issues</button>
+                    <button class="quiz-opt" data-score="3">Multiple issues</button>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-step="4" style="display:none;">
+                <h3>What type of roof do you have?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-score="1">Metal (galvanized or coated)</button>
+                    <button class="quiz-opt" data-score="2">Metal (older/rusty)</button>
+                    <button class="quiz-opt" data-score="2">Composite shingles</button>
+                    <button class="quiz-opt" data-score="3">Wood or other material</button>
+                    <button class="quiz-opt" data-score="2">I'm not sure</button>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-step="5" style="display:none;">
+                <h3>Do you have a first-flush diverter?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-score="1">Yes, and it's maintained</button>
+                    <button class="quiz-opt" data-score="2">Yes, but not sure if it works</button>
+                    <button class="quiz-opt" data-score="3">No</button>
+                    <button class="quiz-opt" data-score="3">What's a first-flush diverter?</button>
+                </div>
+            </div>
+            
+            <div class="quiz-result" id="quizResult" style="display:none;">
+                <div class="result-icon" id="resultIcon">💧</div>
+                <h3 id="resultTitle">Your Water Health Score</h3>
+                <p id="resultText"></p>
+                <a href="#contact" class="btn btn-gold">Get a Free Assessment</a>
+            </div>
+            
+            <button class="quiz-next" id="quizNext" disabled>Next →</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="contact-text">
+                <h2>Let's talk water.</h2>
+                <p>Whether you need a quote, have questions, or just want advice on your system — we're here to help. No pressure, no sales pitch.</p>
+                
+                <div class="contact-info">
+                    <a href="tel:808-765-7234" class="contact-link">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        808-765-7234
+                    </a>
+                    <a href="mailto:waterwise.ent@gmail.com" class="contact-link">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        waterwise.ent@gmail.com
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrap">
+                <h3>Request a Quote</h3>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">What do you need?</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="quote">Free Quote / Assessment</option>
+                            <option value="installation">Tank Installation</option>
+                            <option value="cleaning">Tank Cleaning</option>
+                            <option value="maintenance">Monthly Maintenance</option>
+                            <option value="repair">Repairs</option>
+                            <option value="roof">Roof Washing</option>
+                            <option value="other">Something Else</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Anything else we should know?</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-full">Send Request</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -1567,6 +1914,92 @@
                 item.classList.toggle('open');
             });
         });
+        
+        // Quiz
+        let quizStep = 1;
+        let quizScore = 0;
+        const totalSteps = 5;
+        
+        // Create progress steps
+        const progressBar = document.getElementById('progressBar');
+        progressBar.innerHTML = '';
+        for (let i = 1; i <= totalSteps; i++) {
+            const step = document.createElement('div');
+            step.className = 'progress-step' + (i === 1 ? ' active' : '');
+            step.dataset.step = i;
+            progressBar.appendChild(step);
+        }
+        
+        // Quiz option selection
+        document.querySelectorAll('.quiz-opt').forEach(opt => {
+            opt.addEventListener('click', function() {
+                const parent = this.closest('.quiz-options');
+                parent.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('quizNext').classList.add('enabled');
+                document.getElementById('quizNext').disabled = false;
+            });
+        });
+        
+        // Quiz next button
+        document.getElementById('quizNext').addEventListener('click', function() {
+            if (!this.classList.contains('enabled')) return;
+            
+            // Get selected score
+            const currentQuestion = document.querySelector(`.quiz-question[data-step="${quizStep}"]`);
+            const selected = currentQuestion.querySelector('.quiz-opt.selected');
+            if (selected) {
+                quizScore += parseInt(selected.dataset.score);
+            }
+            
+            // Hide current question
+            currentQuestion.style.display = 'none';
+            
+            // Update progress
+            document.querySelector(`.progress-step[data-step="${quizStep}"]`).classList.add('active');
+            
+            quizStep++;
+            
+            if (quizStep <= totalSteps) {
+                // Show next question
+                const nextQuestion = document.querySelector(`.quiz-question[data-step="${quizStep}"]`);
+                nextQuestion.style.display = 'block';
+                document.querySelector(`.progress-step[data-step="${quizStep}"]`).classList.add('active');
+                
+                // Reset button
+                this.classList.remove('enabled');
+                this.disabled = true;
+            } else {
+                // Show results
+                showQuizResults();
+            }
+        });
+        
+        function showQuizResults() {
+            document.getElementById('quizNext').style.display = 'none';
+            document.querySelector('.quiz-progress').style.display = 'none';
+            
+            const result = document.getElementById('quizResult');
+            const icon = document.getElementById('resultIcon');
+            const title = document.getElementById('resultTitle');
+            const text = document.getElementById('resultText');
+            
+            result.style.display = 'block';
+            
+            if (quizScore <= 7) {
+                icon.textContent = '💧';
+                title.textContent = 'Your system looks healthy!';
+                text.textContent = "Great job maintaining your catchment! To keep it running smoothly, we recommend a professional inspection every couple years. We're happy to take a look and make sure everything's in top shape.";
+            } else if (quizScore <= 12) {
+                icon.textContent = '🔧';
+                title.textContent = 'Your system could use some attention';
+                text.textContent = "There are a few areas that might need maintenance. Whether it's filter changes, a cleaning, or a system check, addressing these now can prevent bigger problems down the road.";
+            } else {
+                icon.textContent = '⚠️';
+                title.textContent = "Let's get your system back on track";
+                text.textContent = "Based on your answers, your catchment system may need some work. But don't worry — we've seen it all and can help. A free assessment will tell us exactly what's needed.";
+            }
+        }
         
         // Chat
         function toggleChat() {
