@@ -4,7 +4,7 @@ Professional website for WaterWise Enterprise, Big Island Hawaii's trusted water
 
 ## 🌴 About
 
-WaterWise provides catchment installation, cleaning, maintenance, and repair services across East Hawaii including Hawaiian Paradise Park, Pahoa, Keaau, Mountain View, Volcano, and Hilo.
+WaterWise provides catchment installation, consultation, maintenance, and repair services across East Hawaii including Hawaiian Paradise Park, Pahoa, Keaau, Mountain View, Volcano, and Hilo.
 
 ## 🚀 Deploy
 
@@ -21,14 +21,16 @@ WaterWise provides catchment installation, cleaning, maintenance, and repair ser
 ## 📁 Files
 
 ```
-├── index.html      # Main website
-├── logo.png        # WaterWise logo
-├── hero.jpg        # Hero image (Rainbow Falls)
-├── tank.jpg        # About section tank image
-├── work-1.jpg      # Gallery: before/after
-├── work-2.jpg      # Gallery: tank install
-├── work-3.jpg      # Gallery: cleaning
-├── vercel.json     # Vercel config
+├── index.html          # Main website
+├── logo.png            # WaterWise logo
+├── hero.jpg            # Hero image (Rainbow Falls)
+├── tank.jpg            # About section tank image
+├── tank-before.jpg     # Before image for slider
+├── tank-after.jpg      # After image for slider
+├── work-metal-roof.jpg # Metal roof build
+├── work-2.jpg          # Tank installation
+├── roof-wash.jpg       # Roof washing
+├── vercel.json         # Vercel config
 └── README.md
 ```
 
@@ -38,6 +40,7 @@ WaterWise provides catchment installation, cleaning, maintenance, and repair ser
 - FAQ structured data for Google rich results
 - Geo-targeted meta tags for Big Island
 - Keywords optimized for Hawaii catchment searches
+- Interactive quiz for engagement and AEO
 
 ## 📞 Contact
 
