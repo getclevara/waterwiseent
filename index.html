@@ -553,22 +553,29 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
         
-        .ba-before, .ba-after {
+        .ba-after {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
+        }
+        
+        .ba-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            clip-path: inset(0 50% 0 0);
         }
         
         .ba-before img, .ba-after img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        .ba-before {
-            clip-path: inset(0 50% 0 0);
         }
         
         .ba-handle {
@@ -614,6 +621,7 @@
             font-weight: 500;
             border-radius: 100px;
             pointer-events: none;
+            z-index: 5;
         }
         
         .ba-label-before { left: 20px; }
@@ -1655,11 +1663,11 @@
         <div class="ba-slider-wrap">
             <h3 class="ba-title">Tank Replacement: Before & After</h3>
             <div class="ba-slider" id="baSlider">
-                <div class="ba-before">
-                    <img src="tank-before.jpg" alt="Old weathered catchment tank before replacement Big Island Hawaii">
-                </div>
                 <div class="ba-after">
                     <img src="tank-after.jpg" alt="New catchment tank after installation Puna Hawaii">
+                </div>
+                <div class="ba-before">
+                    <img src="tank-before.jpg" alt="Old weathered catchment tank before replacement Big Island Hawaii">
                 </div>
                 <div class="ba-handle" id="baHandle">
                     <div class="ba-handle-line"></div>
