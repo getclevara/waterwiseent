@@ -546,36 +546,40 @@
         .ba-slider {
             position: relative;
             width: 100%;
-            aspect-ratio: 1 / 1;
             border-radius: 20px;
             overflow: hidden;
-            cursor: ew-resize;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+        }
+        
+        .ba-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
         }
         
         .ba-after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            display: block;
         }
         
         .ba-before {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 50%;
             height: 100%;
-            z-index: 2;
-            clip-path: inset(0 50% 0 0);
+            overflow: hidden;
         }
         
-        .ba-before img, .ba-after img {
-            width: 100%;
+        .ba-before img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;
             height: 100%;
-            object-fit: cover;
         }
         
         .ba-handle {
@@ -589,7 +593,7 @@
             flex-direction: column;
             align-items: center;
             z-index: 10;
-            pointer-events: none;
+            cursor: ew-resize;
         }
         
         .ba-handle-line {
@@ -1481,7 +1485,6 @@
             .work { padding: 80px 24px; }
             .work-grid { grid-template-columns: 1fr 1fr; }
             .ba-slider-wrap { margin-bottom: 40px; }
-            .ba-slider { aspect-ratio: 1 / 1; }
             
             .tips { padding: 80px 24px; }
             .tips-header { flex-direction: column; align-items: flex-start; }
@@ -1663,10 +1666,8 @@
         <div class="ba-slider-wrap">
             <h3 class="ba-title">Tank Replacement: Before & After</h3>
             <div class="ba-slider" id="baSlider">
-                <div class="ba-after">
-                    <img src="tank-after.jpg" alt="New catchment tank after installation Puna Hawaii">
-                </div>
-                <div class="ba-before">
+                <img class="ba-after" src="tank-after.jpg" alt="New catchment tank after installation Puna Hawaii">
+                <div class="ba-before" id="baBefore">
                     <img src="tank-before.jpg" alt="Old weathered catchment tank before replacement Big Island Hawaii">
                 </div>
                 <div class="ba-handle" id="baHandle">
@@ -2029,42 +2030,60 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Before/After Slider
-        const baSlider = document.getElementById('baSlider');
-        const baHandle = document.getElementById('baHandle');
-        const baBefore = baSlider.querySelector('.ba-before');
-        let isDragging = false;
-        
-        function updateSlider(x) {
-            const rect = baSlider.getBoundingClientRect();
-            let pos = (x - rect.left) / rect.width;
-            pos = Math.max(0.05, Math.min(0.95, pos));
-            const percent = pos * 100;
+        (function() {
+            const slider = document.getElementById('baSlider');
+            const before = document.getElementById('baBefore');
+            const handle = document.getElementById('baHandle');
+            const beforeImg = before.querySelector('img');
+            let isDragging = false;
             
-            baBefore.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-            baHandle.style.left = `${percent}%`;
-        }
-        
-        baSlider.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            updateSlider(e.clientX);
-        });
-        
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) updateSlider(e.clientX);
-        });
-        
-        document.addEventListener('mouseup', () => isDragging = false);
-        
-        baSlider.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            updateSlider(e.touches[0].clientX);
-        });
-        
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) updateSlider(e.touches[0].clientX);
-        });
-        
-        document.addEventListener('touchend', () => isDragging = false);
+            function setSliderPosition(percent) {
+                before.style.width = percent + '%';
+                handle.style.left = percent + '%';
+                beforeImg.style.width = (slider.offsetWidth) + 'px';
+            }
+            
+            function getPercent(e) {
+                const rect = slider.getBoundingClientRect();
+                const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+                let percent = (x / rect.width) * 100;
+                return Math.max(0, Math.min(100, percent));
+            }
+            
+            // Set initial position and image width
+            setSliderPosition(50);
+            window.addEventListener('resize', function() {
+                beforeImg.style.width = slider.offsetWidth + 'px';
+            });
+            
+            slider.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                setSliderPosition(getPercent(e));
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                setSliderPosition(getPercent(e));
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+            
+            slider.addEventListener('touchstart', function(e) {
+                isDragging = true;
+                setSliderPosition(getPercent(e));
+            });
+            
+            document.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                setSliderPosition(getPercent(e));
+            });
+            
+            document.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+        })();
         
         // Review slider
         let current = 0;
