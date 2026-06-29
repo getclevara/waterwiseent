@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "name": "waterwise-enterprise"
+  "name": "waterwise-enterprise",
+  "cleanUrls": true,
+  "trailingSlash": false
 }

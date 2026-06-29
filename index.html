@@ -10,6 +10,15 @@
     <meta property="og:title" content="WaterWise Enterprise | Big Island Catchment Experts">
     <meta property="og:description" content="Trusted catchment installation, cleaning & repairs across Puna, Hilo & East Hawaii. Local crew, 5-star service.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://waterwiseent.com">
+    <meta property="og:image" content="https://waterwiseent.com/hero.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WaterWise Enterprise | Big Island Catchment Experts">
+    <meta name="twitter:description" content="Trusted catchment installation, cleaning & repairs across Puna, Hilo & East Hawaii.">
+    <meta name="twitter:image" content="https://waterwiseent.com/hero.jpg">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <meta name="geo.region" content="US-HI">
     <meta name="geo.placename" content="Hawaiian Paradise Park, Big Island, Hawaii">
     <meta name="geo.position" content="19.5833;-154.9667">
@@ -26,6 +35,7 @@
         "@type": "LocalBusiness",
         "name": "WaterWise Enterprise",
         "description": "Big Island water catchment installation, cleaning, maintenance and repair services",
+        "inLanguage": "en-US",
         "telephone": "+1-808-765-7234",
         "email": "waterwise.ent@gmail.com",
         "address": {
@@ -72,26 +82,34 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How much does water catchment installation cost in Hawaii?",
+                "name": "How much does catchment installation cost on the Big Island?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Water catchment installation on the Big Island typically costs between $7,000-$20,000 depending on tank size, site preparation, and filtration systems. We provide free on-site estimates."
-                }
-            },
-            {
-                "@type": "Question", 
-                "name": "How often should I clean my catchment tank in Hawaii?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "In Hawaii's tropical climate, we recommend a full tank cleaning every 2-3 years. Filters should be changed every 3-6 months due to our heavy rainfall and organic debris."
+                    "text": "Most residential catchment installations in Hawaii run $7,000–$20,000, depending on tank size, site preparation, and filtration systems. We provide free on-site estimates with transparent pricing."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Is catchment water safe to drink on the Big Island?",
+                "name": "How often should I clean my tank in Hawaii's climate?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, with proper filtration. We install sediment filters, carbon filters, and UV treatment systems that make your catchment water safe for drinking and all household use."
+                    "text": "We recommend a full deep clean every 2-3 years for most Puna homes. However, filters should be changed every 3-6 months due to our heavy rainfall, VOG, and organic debris. Our monthly maintenance plans handle all of this."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is catchment water safe to drink?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, with proper filtration. We install multi-stage systems including sediment filters, carbon filters, and UV treatment that make your water safe for drinking, cooking, and all household use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer emergency service?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. No water is a real emergency, especially with kids or elderly at home. Call us and we'll do our best to get to you same-day or next-day. Maintenance plan customers get priority scheduling."
                 }
             }
         ]
@@ -867,6 +885,9 @@
             font-size: 0.95rem;
             border: 1px solid rgba(0,0,0,0.08);
             transition: all 0.3s;
+            text-decoration: none;
+            color: var(--ink);
+            display: inline-block;
         }
         
         .area-tag:hover {
@@ -1187,6 +1208,19 @@
         }
         
         .btn-full { width: 100%; justify-content: center; }
+
+        /* Quiz lead form + form status notes */
+        .quiz-lead { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+        .quiz-lead-label { color: var(--gray); font-size: 0.95rem; margin-bottom: 4px; }
+        .quiz-lead input {
+            width: 100%; padding: 14px 18px; border: 1px solid #e5e5e5;
+            border-radius: 12px; font-family: inherit; font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .quiz-lead input:focus { outline: none; border-color: var(--forest); }
+        .form-note { font-size: 0.9rem; margin-top: 8px; min-height: 1px; }
+        .form-note.success { color: var(--ocean); font-weight: 500; }
+        .form-note.error { color: #c0392b; font-weight: 500; }
         
         /* CTA (simple fallback removed, using contact section) */
         
@@ -1542,7 +1576,7 @@
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 Big Island's Trusted Catchment Experts
             </div>
-            <h1>Clean <i>water</i> for your ʻohana.</h1>
+            <h1>Clean <i>catchment water</i> for your Big Island ʻohana.</h1>
             <p class="hero-sub">Professional water catchment installation, cleaning, and repairs across Puna, Hilo, and East Hawaii. Local crew, licensed & insured, 5-star service.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn btn-gold">Get Free Estimate</a>
@@ -1592,7 +1626,7 @@
                 </div>
             </div>
             <div class="about-img">
-                <img src="tank.jpg" alt="Water catchment tank installation in Puna Hawaii">
+                <img src="tank.jpg" alt="Water catchment tank installation in Puna Hawaii" loading="lazy" decoding="async">
                 <div class="about-badge">
                     <strong>HPP Based</strong>
                     <span>Serving Puna, Hilo & Beyond</span>
@@ -1617,6 +1651,7 @@
                     </div>
                     <h3>Tank Installation</h3>
                     <p>Complete catchment system builds for Big Island homes. Foundation, tank assembly, plumbing, gutters, and filtration—designed for Hawaii's heavy rainfall.</p>
+                    <a href="/services/tank-installation" class="tip-link">Learn more →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1624,6 +1659,7 @@
                     </div>
                     <h3>Monthly Maintenance</h3>
                     <p>Ongoing care keeps problems small. Regular filter changes, sanitization, and a Water Report Card so you always know your water quality.</p>
+                    <a href="/services/maintenance-plans" class="tip-link">Learn more →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1631,6 +1667,7 @@
                     </div>
                     <h3>Catchment Consultation</h3>
                     <p>New to catchment? We'll visit your property, explain how everything works, and create a custom plan tailored to your home and needs. Education first, no pressure.</p>
+                    <a href="/services/catchment-consultation" class="tip-link">Learn more →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1638,6 +1675,7 @@
                     </div>
                     <h3>Repairs & Emergency</h3>
                     <p>Pumps, pipes, liners, valves—we fix it fast. Same-day emergency service available when you're out of water.</p>
+                    <a href="/services/catchment-repairs" class="tip-link">Learn more →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1645,6 +1683,7 @@
                     </div>
                     <h3>System Upgrades</h3>
                     <p>Modern solutions for cleaner water: floating intakes, first-flush diverters, UV treatment, and multi-stage filtration systems.</p>
+                    <a href="/services/catchment-consultation" class="tip-link">Learn more →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1652,6 +1691,7 @@
                     </div>
                     <h3>Roof Washing</h3>
                     <p>Clean catchment surface = cleaner water. We pressure wash roofs to remove moss, algae, VOG residue, and years of buildup.</p>
+                    <a href="/services/roof-washing" class="tip-link">Learn more →</a>
                 </div>
             </div>
         </div>
@@ -1659,16 +1699,16 @@
 
     <section class="work" id="work">
         <div class="work-header">
-            <h2>Recent Projects</h2>
+            <h2>Recent Catchment Projects on the Big Island</h2>
         </div>
         
         <!-- Before/After Slider -->
         <div class="ba-slider-wrap">
             <h3 class="ba-title">Tank Replacement: Before & After</h3>
             <div class="ba-slider" id="baSlider">
-                <img class="ba-after" src="tank-after.jpg" alt="New catchment tank after installation Puna Hawaii">
+                <img class="ba-after" src="tank-after.jpg" alt="New catchment tank after installation Puna Hawaii" loading="lazy" decoding="async">
                 <div class="ba-before" id="baBefore">
-                    <img src="tank-before.jpg" alt="Old weathered catchment tank before replacement Big Island Hawaii">
+                    <img src="tank-before.jpg" alt="Old weathered catchment tank before replacement Big Island Hawaii" loading="lazy" decoding="async">
                 </div>
                 <div class="ba-handle" id="baHandle">
                     <div class="ba-handle-line"></div>
@@ -1685,15 +1725,15 @@
         <!-- Project Gallery -->
         <div class="work-grid">
             <div class="work-item">
-                <img src="work-metal-roof.jpg" alt="New catchment tank with metal roof build Big Island Hawaii">
+                <img src="work-metal-roof.jpg" alt="New catchment tank with metal roof build Big Island Hawaii" loading="lazy" decoding="async">
                 <span class="work-label">New Build</span>
             </div>
             <div class="work-item">
-                <img src="work-2.jpg" alt="Completed catchment tank installation Puna Hawaii">
+                <img src="work-2.jpg" alt="Completed catchment tank installation Puna Hawaii" loading="lazy" decoding="async">
                 <span class="work-label">Tank Installation</span>
             </div>
             <div class="work-item">
-                <img src="roof-wash.jpg" alt="Roof pressure washing for catchment systems Hawaii">
+                <img src="roof-wash.jpg" alt="Roof pressure washing for catchment systems Hawaii" loading="lazy" decoding="async">
                 <span class="work-label">Roof Washing</span>
             </div>
         </div>
@@ -1704,27 +1744,27 @@
             <div class="tips-header">
                 <div>
                     <h2>Big Island Catchment Tips</h2>
-                    <p>Practical advice for Hawaii homeowners—updated twice monthly</p>
+                    <p>Practical advice for Big Island catchment homeowners</p>
                 </div>
             </div>
             <div class="tips-grid">
                 <article class="tip-card">
-                    <p class="tip-date">January 2025</p>
+                    <p class="tip-date">Rainfall &amp; Maintenance</p>
                     <h3>Why Puna's Heavy Rainfall Actually Requires More Maintenance</h3>
                     <p>More rain sounds like good news for catchment—but 120+ inches per year means more debris, faster sediment buildup, and filters that clog quicker. Here's what to watch for.</p>
-                    <a href="#" class="tip-link">Read more →</a>
+                    <a href="#contact" class="tip-link">Ask us about this →</a>
                 </article>
                 <article class="tip-card">
-                    <p class="tip-date">January 2025</p>
+                    <p class="tip-date">VOG &amp; Water Quality</p>
                     <h3>VOG Season & Your Roof: Protecting Your Water Quality</h3>
                     <p>When Kilauea is active, volcanic emissions settle on your catchment surface. Learn how to minimize contamination and when to divert your first flush.</p>
-                    <a href="#" class="tip-link">Read more →</a>
+                    <a href="#contact" class="tip-link">Ask us about this →</a>
                 </article>
                 <article class="tip-card">
-                    <p class="tip-date">December 2024</p>
+                    <p class="tip-date">Gutter Care</p>
                     <h3>The Complete Guide to Gutter Maintenance in Hawaii's Climate</h3>
                     <p>Rust, leaves, coqui frogs, and tropical growth—Hawaii gutters face unique challenges. Our monthly checklist keeps water flowing clean.</p>
-                    <a href="#" class="tip-link">Read more →</a>
+                    <a href="#contact" class="tip-link">Ask us about this →</a>
                 </article>
             </div>
         </div>
@@ -1784,21 +1824,21 @@
         <h2>Serving All of East Hawaii</h2>
         <p>Based in Hawaiian Paradise Park, we service catchment systems across the Big Island</p>
         <div class="areas-tags">
-            <span class="area-tag home">Hawaiian Paradise Park</span>
-            <span class="area-tag">Pahoa</span>
-            <span class="area-tag">Keaau</span>
-            <span class="area-tag">Mountain View</span>
-            <span class="area-tag">Volcano</span>
+            <a href="/service-area/hawaiian-paradise-park" class="area-tag home">Hawaiian Paradise Park</a>
+            <a href="/service-area/pahoa" class="area-tag">Pahoa</a>
+            <a href="/service-area/keaau" class="area-tag">Keaau</a>
+            <a href="/service-area/mountain-view" class="area-tag">Mountain View</a>
+            <a href="/service-area/volcano" class="area-tag">Volcano</a>
             <span class="area-tag">Orchidland Estates</span>
             <span class="area-tag">Hawaiian Acres</span>
             <span class="area-tag">Kurtistown</span>
-            <span class="area-tag">Hilo</span>
+            <a href="/service-area/hilo" class="area-tag">Hilo</a>
         </div>
     </section>
 
     <section class="faq">
         <div class="faq-inner">
-            <h2>Common Questions</h2>
+            <h2>Big Island Catchment Water — Common Questions</h2>
             
             <div class="faq-item">
                 <button class="faq-q">How much does catchment installation cost on the Big Island? <span>+</span></button>
@@ -1895,7 +1935,14 @@
                 <div class="result-icon" id="resultIcon">💧</div>
                 <h3 id="resultTitle">Your Water Health Score</h3>
                 <p id="resultText"></p>
-                <a href="#contact" class="btn btn-gold">Get a Free Assessment</a>
+                <form id="quizForm" class="quiz-lead">
+                    <p class="quiz-lead-label">Want a free personalized assessment? We'll review your answers and reach out — no pressure.</p>
+                    <input type="text" id="qName" placeholder="Name" required>
+                    <input type="tel" id="qPhone" placeholder="Phone" required>
+                    <input type="email" id="qEmail" placeholder="Email" required>
+                    <button type="submit" class="btn btn-gold btn-full">Get My Free Assessment</button>
+                    <p class="form-note" id="quizFormNote"></p>
+                </form>
             </div>
             
             <button class="quiz-next" id="quizNext" disabled>Next →</button>
@@ -1914,16 +1961,16 @@
                         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                         808-765-7234
                     </a>
-                    <a href="/cdn-cgi/l/email-protection#fb8c9a8f9e898c92889ed59e958fbb9c969a9297d5989496" class="contact-link">
+                    <a href="mailto:waterwise.ent@gmail.com" class="contact-link">
                         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-                        <span class="__cf_email__" data-cfemail="ea9d8b9e8f989d83998fc48f849eaa8d878b8386c4898587">[email&#160;protected]</span>
+                        waterwise.ent@gmail.com
                     </a>
                 </div>
             </div>
             
             <div class="contact-form-wrap">
                 <h3>Request a Quote</h3>
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1954,6 +2001,7 @@
                         <textarea id="message" name="message" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-gold btn-full">Send Request</button>
+                    <p class="form-note" id="contactFormNote"></p>
                 </form>
             </div>
         </div>
@@ -1963,29 +2011,33 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <img src="logo.png" alt="WaterWise" style="filter: brightness(0) invert(1);">
+                    <img src="logo.png" alt="WaterWise" loading="lazy" decoding="async" style="filter: brightness(0) invert(1);">
                     <span>WaterWise</span>
                 </a>
                 <p>Big Island water catchment installation, cleaning, maintenance and repairs. Licensed, insured, locally owned in Hawaiian Paradise Park.</p>
             </div>
             <div>
                 <h4>Services</h4>
-                <a href="#services">Consultation</a>
-                <a href="#services">Tank Installation</a>
-                <a href="#services">Monthly Maintenance</a>
-                <a href="#services">Repairs</a>
+                <a href="/services/tank-installation">Tank Installation</a>
+                <a href="/services/tank-cleaning">Tank Cleaning</a>
+                <a href="/services/maintenance-plans">Monthly Maintenance</a>
+                <a href="/services/catchment-repairs">Repairs &amp; Emergency</a>
+                <a href="/services/roof-washing">Roof Washing</a>
+                <a href="/services/catchment-consultation">Consultation</a>
             </div>
             <div>
                 <h4>Service Areas</h4>
-                <a href="#areas">Hawaiian Paradise Park</a>
-                <a href="#areas">Pahoa</a>
-                <a href="#areas">Keaau</a>
-                <a href="#areas">Hilo</a>
+                <a href="/service-area/hawaiian-paradise-park">Hawaiian Paradise Park</a>
+                <a href="/service-area/pahoa">Pahoa</a>
+                <a href="/service-area/keaau">Keaau</a>
+                <a href="/service-area/mountain-view">Mountain View</a>
+                <a href="/service-area/volcano">Volcano</a>
+                <a href="/service-area/hilo">Hilo</a>
             </div>
             <div>
                 <h4>Contact</h4>
                 <a href="tel:808-765-7234">808-765-7234</a>
-                <a href="/cdn-cgi/l/email-protection#e69187928394918f9583c8838892a6818b878f8ac885898b"><span class="__cf_email__" data-cfemail="fb8c9a8f9e898c92889ed59e958fbb9c969a9297d5989496">[email&#160;protected]</span></a>
+                <a href="mailto:waterwise.ent@gmail.com">waterwise.ent@gmail.com</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -2028,7 +2080,28 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        // ===== Lead capture endpoint =====
+        // Paste the Google Apps Script Web App URL here after deploying google-apps-script.gs (see README).
+        const LEAD_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        function submitLead(payload, btn, onDone) {
+            // Guard: until a real Apps Script URL is set, never fake success — send people to call/text.
+            if (!/^https?:\/\//.test(LEAD_ENDPOINT)) { onDone(false); return; }
+            const original = btn ? btn.textContent : '';
+            if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+            payload.page = location.pathname;
+            payload.referrer = document.referrer || 'direct';
+            fetch(LEAD_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => onDone(true))
+            .catch(() => onDone(false))
+            .finally(() => { if (btn) { btn.disabled = false; btn.textContent = original; } });
+        }
+
         // Before/After Slider
         (function() {
             const slider = document.getElementById('baSlider');
@@ -2114,6 +2187,8 @@
         // Quiz
         let quizStep = 1;
         let quizScore = 0;
+        let quizAnswers = [];
+        let quizTier = '';
         const totalSteps = 5;
         
         // Create progress steps
@@ -2146,6 +2221,8 @@
             const selected = currentQuestion.querySelector('.quiz-opt.selected');
             if (selected) {
                 quizScore += parseInt(selected.dataset.score);
+                const q = currentQuestion.querySelector('h3').textContent.trim();
+                quizAnswers.push(q + ': ' + selected.textContent.trim());
             }
             
             // Hide current question
@@ -2181,7 +2258,8 @@
             const text = document.getElementById('resultText');
             
             result.style.display = 'block';
-            
+            quizTier = quizScore <= 7 ? 'Healthy' : (quizScore <= 12 ? 'Needs attention' : 'Needs work');
+
             if (quizScore <= 7) {
                 icon.textContent = '💧';
                 title.textContent = 'Your system looks healthy!';
@@ -2268,4 +2346,60 @@
             if (msg.includes('hi') || msg.includes('hello') || msg.includes('hey') || msg.includes('aloha')) {
                 return `Hey! 👋 What can we help you with? Need a quote, have questions about your system, or something else?`;
             }
+            return `Good question! The fastest way to get a real answer is a quick call or text — reach us at <strong>808-765-7234</strong>. 🤙`;
+        }
+
+        // ===== Contact form =====
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const note = document.getElementById('contactFormNote');
+            const btn = this.querySelector('button[type="submit"]');
+            const payload = {
+                source: 'Contact',
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+            submitLead(payload, btn, (ok) => {
+                if (ok) {
+                    this.reset();
+                    note.textContent = "Mahalo! We got your request and will be in touch shortly.";
+                    note.className = 'form-note success';
+                } else {
+                    note.textContent = "Mahalo! The fastest way to reach us is to call or text 808-765-7234.";
+                    note.className = 'form-note error';
+                }
+            });
+        });
+
+        // ===== Quiz lead form =====
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const note = document.getElementById('quizFormNote');
+            const btn = this.querySelector('button[type="submit"]');
+            const payload = {
+                source: 'Quiz',
+                name: document.getElementById('qName').value,
+                phone: document.getElementById('qPhone').value,
+                email: document.getElementById('qEmail').value,
+                quizScore: quizScore,
+                quizTier: quizTier,
+                answers: quizAnswers
+            };
+            submitLead(payload, btn, (ok) => {
+                if (ok) {
+                    note.textContent = "Mahalo! We'll review your answers and reach out soon.";
+                    note.className = 'form-note success';
+                    btn.style.display = 'none';
+                } else {
+                    note.textContent = "Mahalo! The fastest way to reach us is to call or text 808-765-7234.";
+                    note.className = 'form-note error';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
       

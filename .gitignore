@@ -3,3 +3,13 @@ Thumbs.db
 .vscode/
 .idea/
 *.log
+
+# Local agent / tooling files
+.claude/
+.vercel/
+
+# Uncompressed source image backups (not for deploy)
+originals-backup/
+
+# Client deliverables — sent directly, not served on the public site
+marketing/
