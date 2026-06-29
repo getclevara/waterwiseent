@@ -446,49 +446,20 @@
             font-weight: 400;
         }
         
-        .scroll-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--ocean);
-            font-size: 0.9rem;
-            animation: slideRight 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes slideRight {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(8px); }
-        }
-        
         .services-wrap {
             position: relative;
         }
-        
-        .services-wrap::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 100px;
-            background: linear-gradient(to right, transparent, var(--sand));
-            pointer-events: none;
-            z-index: 5;
-        }
-        
+
         .services-scroll {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            overflow-x: auto;
-            padding: 0 48px 20px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
         }
-        
-        .services-scroll::-webkit-scrollbar { display: none; }
-        
+
         .service-card {
-            flex: 0 0 340px;
             background: white;
             border-radius: 20px;
             padding: 36px;
@@ -1512,9 +1483,7 @@
             
             .services { padding: 80px 24px; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0; }
-            .services-wrap::after { width: 60px; }
-            .services-scroll { padding: 0 24px 20px; }
-            .service-card { flex: 0 0 300px; }
+            .services-scroll { grid-template-columns: repeat(2, 1fr); padding: 0 24px; gap: 18px; }
             
             .work { padding: 80px 24px; }
             .work-grid { grid-template-columns: 1fr 1fr; }
@@ -1543,6 +1512,7 @@
         
         @media (max-width: 600px) {
             header { top: 16px; }
+            .services-scroll { grid-template-columns: 1fr; }
             .hero-btns { flex-direction: column; width: 100%; }
             .hero-btns .btn { width: 100%; justify-content: center; }
             .about-stats { flex-direction: column; gap: 20px; }
@@ -1638,10 +1608,6 @@
     <section class="services" id="services">
         <div class="section-header">
             <h2>Catchment Services</h2>
-            <div class="scroll-indicator">
-                Scroll for more
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </div>
         </div>
         <div class="services-wrap">
             <div class="services-scroll">
