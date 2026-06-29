@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://waterwiseent.com/</loc>
+    <loc>https://www.waterwiseent.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://waterwiseent.com/services/tank-installation</loc>
+    <loc>https://www.waterwiseent.com/services/tank-installation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/services/tank-cleaning</loc>
+    <loc>https://www.waterwiseent.com/services/tank-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/services/catchment-repairs</loc>
+    <loc>https://www.waterwiseent.com/services/catchment-repairs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/services/roof-washing</loc>
+    <loc>https://www.waterwiseent.com/services/roof-washing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/services/maintenance-plans</loc>
+    <loc>https://www.waterwiseent.com/services/maintenance-plans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/services/catchment-consultation</loc>
+    <loc>https://www.waterwiseent.com/services/catchment-consultation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://waterwiseent.com/service-area/hawaiian-paradise-park</loc>
+    <loc>https://www.waterwiseent.com/service-area/hawaiian-paradise-park</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/service-area/pahoa</loc>
+    <loc>https://www.waterwiseent.com/service-area/pahoa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/service-area/keaau</loc>
+    <loc>https://www.waterwiseent.com/service-area/keaau</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/service-area/mountain-view</loc>
+    <loc>https://www.waterwiseent.com/service-area/mountain-view</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/service-area/volcano</loc>
+    <loc>https://www.waterwiseent.com/service-area/volcano</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://waterwiseent.com/service-area/hilo</loc>
+    <loc>https://www.waterwiseent.com/service-area/hilo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
