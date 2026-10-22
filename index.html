@@ -1221,6 +1221,8 @@
         }
         .quiz-lead input:focus { outline: none; border-color: var(--forest); }
         .form-note { font-size: 0.9rem; margin-top: 8px; min-height: 1px; }
+        /* Honeypot: off-screen so real people never see it, but bots fill it. */
+        .hp-field { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
         .form-note.success { color: var(--ocean); font-weight: 500; }
         .form-note.error { color: #c0392b; font-weight: 500; }
         
@@ -1937,6 +1939,7 @@
                 <h3 id="resultTitle">Your Water Health Score</h3>
                 <p id="resultText"></p>
                 <form id="quizForm" class="quiz-lead">
+                    <input type="text" id="qHP" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <p class="quiz-lead-label">Want a free personalized assessment? We'll review your answers and reach out — no pressure.</p>
                     <input type="text" id="qName" placeholder="Name" required>
                     <input type="tel" id="qPhone" placeholder="Phone" required>
@@ -1972,6 +1975,7 @@
             <div class="contact-form-wrap">
                 <h3>Request a Quote</h3>
                 <form class="contact-form" id="contactForm">
+                    <input type="text" id="cHP" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -2085,10 +2089,19 @@
         // ===== Lead capture endpoint =====
         // Paste the Google Apps Script Web App URL here after deploying google-apps-script.gs (see README).
         const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxV4P7B_KKl7vV-O662Qm_9cXoaahAyU-n3rgREDa0V9grH8JuxZ__itdgvgsu7Ay8b/exec';
+        // Shared token the Apps Script requires. Not a true secret (it is in page source),
+        // but it blocks the generic bots that POST straight to the endpoint URL.
+        const LEAD_TOKEN = 'ww-live-Rk7mQ2pX';
+        const LEAD_PAGE_LOADED = Date.now();
 
         function submitLead(payload, btn, onDone) {
             // Guard: until a real Apps Script URL is set, never fake success — send people to call/text.
             if (!/^https?:\/\//.test(LEAD_ENDPOINT)) { onDone(false); return; }
+            // Spam traps: honeypot filled, or submitted suspiciously fast = bot.
+            // Pretend success (so the bot moves on) but never send it.
+            if (payload.company) { onDone(true); return; }
+            if (Date.now() - LEAD_PAGE_LOADED < 3000) { onDone(true); return; }
+            payload.token = LEAD_TOKEN;
             const original = btn ? btn.textContent : '';
             if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
             payload.page = location.pathname;
@@ -2361,7 +2374,8 @@
                 phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
                 service: document.getElementById('service').value,
-                message: document.getElementById('message').value
+                message: document.getElementById('message').value,
+                company: document.getElementById('cHP').value
             };
             submitLead(payload, btn, (ok) => {
                 if (ok) {
@@ -2387,7 +2401,8 @@
                 email: document.getElementById('qEmail').value,
                 quizScore: quizScore,
                 quizTier: quizTier,
-                answers: quizAnswers
+                answers: quizAnswers,
+                company: document.getElementById('qHP').value
             };
             submitLead(payload, btn, (ok) => {
                 if (ok) {
